@@ -1,4 +1,5 @@
 class Workspace < ApplicationRecord
   belongs_to :user
-  has_many :reviews, dependent: :destroy
+  has_many :bookings
+  has_many :reviews
 end
