@@ -29,6 +29,7 @@ class WorkspacesController < ApplicationController
     redirect_to workspace_path(@workspace)
     else
     render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
