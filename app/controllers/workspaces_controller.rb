@@ -19,6 +19,19 @@ class WorkspacesController < ApplicationController
     end
   end
 
+  def edit
+    @workspace = Workspace.find(params[:id])
+  end
+
+  def update
+    @workspace = Workspace.find(params[:id])
+    if @workspace.update(workspace_params)
+    redirect_to workspace_path(@workspace)
+    else
+    render :new, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @workspace = Workspace.find(params[:id])
     @workspace.destroy
