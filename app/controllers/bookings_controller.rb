@@ -39,4 +39,8 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:id_user, :id_workspace, :start_date, :end_date)
   end
+  def calculate_total_price
+    @booking = Booking.find(params[:id])
+    @total_price = @booking.calculate_total_price
+  end
 end

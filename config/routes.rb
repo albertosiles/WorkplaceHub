@@ -13,4 +13,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  resources :bookings do
+    get 'calculate_total_price', on: :id
+  end
 end
