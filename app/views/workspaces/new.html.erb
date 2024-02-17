@@ -1,0 +1,8 @@
+<h1>Create a new workspace:</h1>
+<%= simple_form_for(@workspace) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :location %>
+  <%= f.submit "Create workspace", class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,6 @@
+<h1>Write a review for your latest stay:</h1>
+  <%= simple_form_for(@workspace, @review) do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>
