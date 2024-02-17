@@ -19,4 +19,7 @@ resources :reviews, only: [:destroy]
 
   # Defines the root path route ("/")
   # root "posts#index"
+  # resources :bookings do
+  #   get 'calculate_total_price', on: :id
+  # end
 end
