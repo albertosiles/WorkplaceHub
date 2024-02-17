@@ -10,9 +10,10 @@ class BookingsController < ApplicationController
     @workspace = Workspace.find(params[:workspace_id])
     @booking = @workspace.bookings.new(booking_params)
     @booking.user = current_user
+    @booking.total_price = total_price
 
     if @booking.save
-      redirect_to workspace_path(@workspace), notice: 'Booking was successfully created.'
+      redirect_to bookings_path, notice: 'Booking was successfully created.'
     else
       render :new
     end
@@ -21,8 +22,10 @@ class BookingsController < ApplicationController
   # PATCH/PUT /bookings/1
   def update
     @booking = Booking.find(params[:id])
+    @booking.total_price = total_price
+
     if @booking.update(booking_params)
-      redirect_to workspace_path(@booking.workspace), notice: 'Booking was successfully updated.'
+      redirect_to bookings_path, notice: 'Booking was successfully updated.'
     else
       render :edit
     end
@@ -32,7 +35,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to bookings_url, notice: 'Booking was successfully destroyed.'
+    redirect_to bookings_path, notice: 'Booking was successfully destroyed.'
   end
 
   private
@@ -43,6 +46,11 @@ class BookingsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def booking_params
-    params.require(:booking).permit(:id_user, :id_workspace, :start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date)
+  end
+  def total_price
+    start_date = Date.parse(@booking.start_date)
+    end_date = Date.parse(@booking.end_date)
+    @workspace.price * (end_date - start_date).to_i
   end
 end
