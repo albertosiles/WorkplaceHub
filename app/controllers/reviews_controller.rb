@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @workspace = Workspace.find(params[:workspace_id])
     @review.workspace_id  = @workspace.id
     @review.user = current_user
-    if @review.save!
+    if @review.save
     redirect_to workspace_path(@workspace)
     else
       render :new, status: :unprocessable_entity
