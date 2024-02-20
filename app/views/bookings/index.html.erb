@@ -1,0 +1,31 @@
+<h1>Your bookings</h1>
+<% if current_user.bookings.count == 0 %>
+  <p>You currently do not have any bookings.</p>
+<% else %>
+  <p>You currently have the following bookings:</p>
+  <div class="card-booking-wrapper">
+    <% @bookings.each do |booking| %>
+      <div class="card-booking">
+        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+        <div class="card-booking-infos">
+          <% start_date = booking.start_date.to_date %>
+          <% end_date = booking.end_date.to_date %>
+          <% price_per_day = booking.workspace.price %>
+
+          <% total_days = (end_date - start_date).to_i + 1 %>
+          <% total_price = total_days * price_per_day %>
+
+          <p><%= booking.start_date %></p>
+          <p><%= booking.end_date %></p>
+          <p>Price/day: €<%= price_per_day %></p>
+          <h2>Total Price: €<%= total_price %></h2>
+
+          <h2>Workspace: <%= link_to booking.workspace.name, workspace_path(booking.workspace), class: "btn btn-primary btn-sm" %></h2>
+          <br>
+          <p><%= link_to "Edit", edit_workspace_booking_path(booking) %>
+          <%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
