@@ -1,9 +1,55 @@
-<h1>Welcome to WorkplaceHub</h1>
-<p>Choose one of our workspaces to check availability</p>
-<div class="cards">
-<% @workspaces.each do |workspace| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
-    <p><%= workspace.name %></p>
-  </div>
-<% end %>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkplaceHub</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">WorkplaceHub</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="display-4 text-center mb-5 mt-3">Welcome to WorkplaceHub</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <% @workspaces.each do |workspace| %>
+            <div class="col">
+                <div class="card h-100 border-0 rounded-3 shadow">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            class="card-img-top rounded-top" alt="Workspace Image">
+                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                            <h5 class="card-title text-center text-white mb-0"><%= workspace.name %></h5>
+                            <p class="card-text text-white"><%= workspace.description %></p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-muted">Location: <%= workspace.location %></p>
+                        <p class="card-text text-muted">Price per day: £<%= workspace.price %></p>
+                    </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-tCtdm8b06zo3W0rR1hVJ2IyUVic9gkP9uHOizp1x9Gk9rDSh/THtpAGUCQKOYb4A"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-pzjw8f+0jOBVXyUtFhTk5f2KpYu2lW7jWS2OGfqcjEzIxp4ygE2nI1t44W5OzJR7"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

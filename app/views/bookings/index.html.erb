@@ -1,0 +1,16 @@
+ <!-- Bookings section -->
+        <% if @bookings.any? %>
+        <h4 class="mt-5">Bookings:</h4>
+        <ul class="list-group">
+            <% @bookings.each do |booking| %>
+            <li class="list-group-item">
+                <p><strong>Start Date:</strong> <%= booking.start_date %></p>
+                <p><strong>End Date:</strong> <%= booking.end_date %></p>
+                <!-- Display other booking details as needed -->
+            </li>
+            <% end %>
+        </ul>
+        <% else %>
+        <p class="mt-4">No bookings for this workspace yet.</p>
+        <% end %>
+        <!-- End of Bookings section -->
