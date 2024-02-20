@@ -43,8 +43,8 @@ class WorkspacesController < ApplicationController
     redirect_to owner_workspaces_path
   end
 
-  def owner
-  @workspaces = current_user.workspaces
+  def my_offerings
+    @workspaces = current_user.workspaces
   end
 
   private

@@ -5,9 +5,6 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :bookings
-    collection do
-      get :owner
-    end
   end
 
   resources :workspaces do
@@ -16,6 +13,8 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:index, :update, :destroy]
 resources :reviews, only: [:destroy]
+
+get "/my_offerings", to: "workspaces#my_offerings", as: :owner_workspaces
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
