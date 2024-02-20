@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :workspaces do
     resources :reviews, only: [:new, :create]
     resources :bookings
+    collection do
+      get :owner
+    end
   end
 
 resources :reviews, only: [:destroy]
