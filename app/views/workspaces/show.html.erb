@@ -1,25 +1,43 @@
-<div class="container">
-  <%= link_to "Back to workspaces", workspaces_path %>
-  <br>
-  <h1><%= @workspace.name %></h1>
-  <div><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="workspace" height="300" width="480">
-  </div>
-  <br>
-  <p><%= @workspace.location %></p>
-  <%# <br> %>
-  <p><%= @workspace.description %></p>
-  <%# <br> %>
-  <h4>Price per day: €<%= @workspace.price %></h4>
-  <br>
-  <p>Reviews of former users:</p>
-  </div>
-  <div class="container">
-  <ul>
-	<% @workspace.reviews.each do |review| %>
-  	<li>Rating: <%= review.rating %>
-    <br>
-	<%= review.content %></li>
-	<% end %>
-	</ul>
-<%= link_to "Add a review", new_workspace_review_path(@workspace) %>
-  </div>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #343a40;">
+        <a class="navbar-brand" href="#">WorkplaceHub</a>
+    </nav>
+
+    <div class="container content-container">
+        <%= link_to "Back to workspaces", workspaces_path %>
+        <h1 class="mt-4 mb-3"><%= @workspace.name %></h1>
+        <div class="card-category"
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
+        </div>
+        <div class="mt-4 mb-4">
+            <p><strong>Location:</strong> <%= @workspace.location %></p>
+            <p><strong>Description:</strong> <%= @workspace.description %></p>
+            <p><strong>Price per day:</strong> €<%= @workspace.price %></p>
+        </div>
+        <h4>Reviews of former users:</h4>
+        <ul class="list-unstyled">
+            <% @workspace.reviews.each do |review| %>
+            <li><strong>Rating:</strong> <%= review.rating %> - <%= review.content %></li>
+            <% end %>
+        </ul>
+        <%= link_to "Add a review", new_workspace_review_path(@workspace), class: "btn btn-primary mb-0" %>
+
+        <!-- Check Availability button -->
+        <div class="text-center">
+            <a href="#" class="btn btn-success btn-lg">Check Availability</a>
+        </div>
+        <!-- End Check Availability button -->
+
+        <!-- Bookings section -->
+        <%= simple_form_for [@workspace,@booking] do |f| %>
+          <div class="form-group">
+            <%= f.label :start_date %>
+            <%= f.input :start_date, as: :date, html5: true, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :end_date %>
+            <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>
+          </div>
+          <%= f.button :submit, class: "btn btn-primary mt-4" %>
+        <% end %>
+        <!-- End of Bookings section -->
+    </div>

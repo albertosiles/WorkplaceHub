@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   resources :workspaces do
     resources :reviews, only: [:new, :create]
-    resources :bookings
+    resources :bookings, only: [:create]
   end
-
+  resources :bookings, only: [:index, :update, :destroy]
 resources :reviews, only: [:destroy]
 
 

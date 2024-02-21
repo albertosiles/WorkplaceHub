@@ -49,8 +49,8 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:start_date, :end_date)
   end
   def total_price
-    start_date = Date.parse(@booking.start_date)
-    end_date = Date.parse(@booking.end_date)
+    start_date = @booking.start_date
+    end_date = @booking.end_date
     @workspace.price * (end_date - start_date).to_i
   end
 end
