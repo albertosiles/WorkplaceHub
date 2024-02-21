@@ -1,0 +1,10 @@
+<div class="card-booking">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-booking-infos">
+    <h2>Workspace: <%= @booking.workspace.name %></h2>
+    <p><%= @booking.start_date %></p>
+    <p><%= @booking.end_date %></p>
+    <p>Price/day: €<%= price_per_day %></p>
+    <h2>Total Price: €<%= total_price %></h2>
+  </div>
+</div>

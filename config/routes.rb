@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root to: "workspaces#index"
 
-  # resources :users
+  resources :users do
+    resources :bookings
+  end
 
   resources :workspaces do
     resources :reviews, only: [:new, :create]
