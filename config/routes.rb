@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :bookings
+    collection do
+      get :owner
+    end
   end
 
   resources :workspaces do

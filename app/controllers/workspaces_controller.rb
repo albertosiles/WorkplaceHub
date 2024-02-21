@@ -40,7 +40,11 @@ class WorkspacesController < ApplicationController
   def destroy
     @workspace = Workspace.find(params[:id])
     @workspace.destroy
-    redirect_to workspaces_path
+    redirect_to owner_workspaces_path
+  end
+
+  def owner
+  @workspaces = current_user.workspaces
   end
 
   private
