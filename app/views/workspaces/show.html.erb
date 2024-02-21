@@ -1,47 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workspace Details</title>
-    <!-- Bootstrap CSS via CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <style>
-        /* Custom CSS for additional styling */
-        .card-category {
-            height: 200px; /* Adjust as needed */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            text-align: center;
-        }
-
-        .content-container {
-            background-color: #ffffff; /* White background */
-            padding-top: 20px; /* Add some top padding */
-        }
-
-        .badge-container {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            background-color: #343a40;
-            color: white;
-            padding: 10px;
-        }
-    </style>
-</head>
-<body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #343a40;">
         <a class="navbar-brand" href="#">WorkplaceHub</a>
     </nav>
 
     <div class="container content-container">
+        <%= link_to "Back to workspaces", workspaces_path %>
         <h1 class="mt-4 mb-3"><%= @workspace.name %></h1>
         <div class="card-category"
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
@@ -79,15 +41,3 @@
         <% end %>
         <!-- End of Bookings section -->
     </div>
-
-    <!-- Bootstrap JS via CDN (optional, only if you need Bootstrap JS functionality) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
-        integrity="sha384-tCtdm8b06zo3W0rR1hVJ2IyUVic9gkP9uHOiz"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-pzjw8f+0jOBVXyUtFhTk5f2KpYu2lW7jWS2OGfqcjEzIxp4ygE2nI1t44W5OzJR7"
-        crossorigin="anonymous"></script>
-</body>
-</html>
