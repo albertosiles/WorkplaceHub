@@ -10,3 +10,29 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.card-category {
+  height: 200px; /* Adjust as needed */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+
+.content-container {
+  background-color: #ffffff; /* White background */
+  padding-top: 20px; /* Add some top padding */
+}
+
+.badge-container {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: #343a40;
+  color: white;
+  padding: 10px;
+}
