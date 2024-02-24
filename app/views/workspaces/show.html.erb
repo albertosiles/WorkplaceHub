@@ -6,8 +6,8 @@
         </div>
         <div class="mt-4 mb-4">
             <p><strong>Location:</strong> <%= @workspace.location %></p>
-            <p><strong>Description:</strong> <%= @workspace.description %></p>
             <p><strong>Price per day:</strong> €<%= @workspace.price %></p>
+            <%= @workspace.description %>
         </div>
         <p>Reviews of former users:</p>
         <ul class="list-unstyled">
