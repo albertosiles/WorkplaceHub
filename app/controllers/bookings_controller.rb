@@ -20,9 +20,13 @@ class BookingsController < ApplicationController
   end
 
   # PATCH/PUT /bookings/1
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
   def update
     @booking = Booking.find(params[:id])
-    @booking.total_price = total_price
+    # @booking.total_price = total_price
 
     if @booking.update(booking_params)
       redirect_to bookings_path, notice: 'Booking was successfully updated.'
