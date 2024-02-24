@@ -6,10 +6,10 @@
         </div>
         <div class="mt-4 mb-4">
             <p><strong>Location:</strong> <%= @workspace.location %></p>
-            <p><strong>Description:</strong> <%= @workspace.description %></p>
             <p><strong>Price per day:</strong> €<%= @workspace.price %></p>
+            <%= @workspace.description %>
         </div>
-        <h4>Reviews of former users:</h4>
+        <p><strong>Reviews of former users:</p></strong>
         <ul class="list-unstyled">
             <% @workspace.reviews.each do |review| %>
             <li><strong>Rating:</strong> <%= review.rating %> - <%= review.content %></li>
