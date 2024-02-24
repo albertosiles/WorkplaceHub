@@ -11,17 +11,12 @@
                       <% end %>
                       <div class="card-img-overlay d-flex flex-column justify-content-between">
                         <h5 class="card-title text-center text-white mb-0"><%= workspace.name %></h5>
-                        <p class="card-text text-white"><%= workspace.description %></p>
                       </div>
                     </div>
                     <div class="card-body">
                         <p class="card-text text-muted">Location: <%= workspace.location %></p>
                         <p class="card-text text-muted">Price per day: £<%= workspace.price %></p>
                     </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-text text-muted">Location: <%= workspace.location %></p>
-                    <p class="card-text text-muted">Price per day: £<%= workspace.price %></p>
                 </div>
            </div>
         <% end %>
