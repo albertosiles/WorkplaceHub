@@ -9,10 +9,10 @@
             <p><strong>Description:</strong> <%= @workspace.description %></p>
             <p><strong>Price per day:</strong> €<%= @workspace.price %></p>
         </div>
-        <h4>Reviews of former users:</h4>
+        <p>Reviews of former users:</p>
         <ul class="list-unstyled">
             <% @workspace.reviews.each do |review| %>
-            <li><strong>Rating:</strong> <%= review.rating %> - <%= review.content %></li>
+            <li><i class="fa-solid fa-star"></i> <%= review.rating %>/5 - "<%= review.content %>"</li>
             <% end %>
         </ul>
         <%= link_to "Add a review", new_workspace_review_path(@workspace), class: "btn btn-primary mb-0" %>

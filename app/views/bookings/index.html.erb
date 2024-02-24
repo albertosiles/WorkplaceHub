@@ -22,7 +22,7 @@
 
           <h2>Workspace: <%= link_to booking.workspace.name, workspace_path(booking.workspace), class: "btn btn-primary btn-sm" %></h2>
           <br>
-          <p><%= link_to "Edit", edit_workspace_booking_path(booking) %>
+          <p><%= link_to "Edit", edit_booking_path(booking) %>
           <%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
         </div>
       </div>
