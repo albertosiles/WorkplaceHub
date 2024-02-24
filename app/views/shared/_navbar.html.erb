@@ -17,20 +17,21 @@
                     <li class="nav-item active">
             <%= link_to "Your offerings", owner_workspaces_path(@workspaces), class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <li class="nav-item active">
+            <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> %>
               <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item", data: {turbo_method: :delete} %>
               <% if user_signed_in? %>
                 <%= button_to(
                   "Log Out",
                   destroy_user_session_path,
+                  class: "nav-link",
                   method: :delete
                 ) %>
               <% else %>
-                <%= link_to "Sign in", new_user_session_path %>
+                <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
               <% end %>
-            </div>
+            <%# </div> %>
           </li>
         <%# else %>
           <!--li class="nav-item"-->
