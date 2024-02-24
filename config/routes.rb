@@ -3,18 +3,17 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root to: "workspaces#index"
 
-  resources :users do
-    resources :bookings
-  end
+  resources :users
 
   resources :workspaces do
     resources :reviews, only: [:new, :create]
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:index, :update, :destroy]
-resources :reviews, only: [:destroy]
 
-get "/my_offerings", to: "workspaces#my_offerings", as: :owner_workspaces
+  resources :bookings, only: [:index, :edit, :update, :destroy]
+  resources :reviews, only: [:destroy]
+
+  get "/my_offerings", to: "workspaces#my_offerings", as: :owner_workspaces
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
