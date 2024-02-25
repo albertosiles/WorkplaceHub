@@ -11,28 +11,32 @@
                     <h5> € <%= @workspace.price %>/day</h5>
                 </div>
             </div>
-            <div class="column">
+            </div>
+            <div class="container-2">
+                          <div class="column">
                 <div class="mt-4 mb-4">
+            <div class="textcard">
                   <p><%= @workspace.description %></p>
                 </div>
-            </div>
-        </div>
         <br>
-
+</div>
           <!-- Bookings section -->
+
         <div class="container-booking-form">
           <div class="column">
+            <h5>Book your workspace now:</h5><br>
             <%= simple_form_for [@workspace,@booking], html: { class: "center-form" } do |f| %>
-              <div class="form-group">
-                <%#= f.label :start_date %>
-                <%= f.input :start_date, as: :date, html5: true, class: "form-control" %>
+              <div class="form-group mb-3">
+                <%= f.label :start_date %><br>
+                <%= f.input :start_date, as: :date, html5: true, label: false, class: "form-control" %>
               </div>
-              <div class="form-group">
-                <%#= f.label :end_date %>
-                <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>
+              <div class="form-group mb-3">
+                <%= f.label :end_date %><br>
+                <%= f.input :end_date, as: :date, html5: true, label: false, class: "form-control" %>
               </div>
-              <%= f.button :submit, class: "btn mt-4" %>
+              <%= f.button :submit, class: "btn btn-primary mt-4" %>
             <% end %>
+            <br><br><br><br>
           </div>
           <div class= "column">
             <h5>Reviews of former users:</h5>
