@@ -1,11 +1,25 @@
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: white;
-  color: #474F7A;
-  padding: 5px;
-  text-align: center;
-  margin-top: 20px;
+// footer {
+//   position: fixed;
+//   left: 0;
+//   bottom: 0;
+//   width: 100%;
+//   background-color: white;
+//   color: #474F7A;
+//   padding: 5px;
+//   text-align: center;
+//   margin-top: 20px;
+// }
+
+.footer {
+  background: #F4F4F4;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  height: 70px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+
+.footer p {
+  color:  #474F7A;
 }
