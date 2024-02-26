@@ -38,6 +38,11 @@ class BookingsController < ApplicationController
     redirect_to bookings_path, notice: 'Booking was successfully destroyed.'
   end
 
+  # GET /bookings/1/edit
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_booking
@@ -51,6 +56,6 @@ class BookingsController < ApplicationController
   def total_price
     start_date = @booking.start_date
     end_date = @booking.end_date
-    @workspace.price * (end_date - start_date).to_i
+    @booking.workspace.price * (end_date - start_date).to_i
   end
 end

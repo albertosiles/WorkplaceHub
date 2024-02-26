@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
     resources :bookings, only: [:create]
   end
-  resources :bookings, only: [:index, :update, :destroy]
+  resources :bookings, only: [:index, :edit, :update, :destroy]
 resources :reviews, only: [:destroy]
 
 get "/my_offerings", to: "workspaces#my_offerings", as: :owner_workspaces
