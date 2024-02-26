@@ -1,25 +1,30 @@
-<h1>Your workspaces</h1>
+<div class="container">
+  <h1>Your workspaces</h1>
   <div>
-  <%= link_to "Offer a new workspace", new_workspace_path(@workspaces), class: "btn btn-success btn-sm" %>
+    <%= link_to "Offer a new workspace", new_workspace_path(@workspaces), class: "btn btn-success btn-sm" %>
   </div>
   <br>
-<% if current_user.workspaces.count == 0 %>
-  <p>You currently do not offer any workspaces.</p>
-<% else %>
-  <p>You are currently offering the following workspaces:</p>
-  <div class="card-product-wrapper">
-    <% @workspaces.each do |workspace| %>
-      <div class="card-product">
-        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-        <div class="card-product-infos">
-          <h2><%= workspace.name %></h2>
-          <p><%= workspace.location %></p>
-          <p>Price/day: €<%= workspace.price %></p>
-          <br>
-          <p><%= link_to "Edit", edit_workspace_path(workspace) %>
-          <%= link_to "Delete", workspace_path(workspace), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+  <% if current_user.workspaces.count == 0 %>
+    <p>You currently do not offer any workspaces.</p>
+  <% else %>
+    <p>You are currently offering the following workspaces:</p>
+    <div class="card-product-wrapper">
+        <% @workspaces.each do |workspace| %>
+          <%= link_to workspace_path(workspace), class: "card-product-link" do %>
+            <div class="card-product">
+              <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+              <div class="card-product-infos">
+                <h2><%= workspace.name %></h2>
+                <p><%= workspace.location %></p>
+                <p>€ <%= workspace.price %>/day</p>
+                <div class="action-buttons">
+                  <p><%= link_to "Edit", edit_workspace_path(workspace) %>
+                  <%= link_to "Delete", workspace_path(workspace), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+  <% end %>
+</div>
