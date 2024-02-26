@@ -10,7 +10,6 @@ class Workspace < ApplicationRecord
   validates :price, presence: true
   validates :location, presence: true
 
-  # Method to return the image URL of the workspace
   def image_url
     # Add your logic here to generate or retrieve the image URL
     # For example, if you have an 'image' attribute in your Workspace model,

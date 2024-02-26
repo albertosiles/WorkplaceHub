@@ -1,0 +1,14 @@
+{
+  "entrypoints": {
+    "workspaces": {
+      "js": [
+        "/packs/js/workspaces-f06816f4f90fda7a9c5a.js"
+      ],
+      "js.map": [
+        "/packs/js/workspaces-f06816f4f90fda7a9c5a.js.map"
+      ]
+    }
+  },
+  "workspaces.js": "/packs/js/workspaces-f06816f4f90fda7a9c5a.js",
+  "workspaces.js.map": "/packs/js/workspaces-f06816f4f90fda7a9c5a.js.map"
+}
