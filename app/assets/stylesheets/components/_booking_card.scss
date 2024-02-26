@@ -18,7 +18,10 @@
   flex-direction: column;
   border-radius: 5px;
   margin: 0 10px 20px 0; /* Adjust margin as needed */
+  align-items: center; /* Center items vertically */
+
 }
+
 
 .card-booking img {
   height: 160px;
@@ -29,46 +32,42 @@
 }
 
 .card-booking-infos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+  /* Existing styles */
+  flex-grow: 1; /* Allow the content to grow to fill available space */
 }
 
-.info-column {
-  flex: 1 1 45%; /* Adjust width as needed */
-  padding: 0 10px; /* Adjust spacing as needed */
-  margin-bottom: 10px;  /* Adjust spacing as needed */
-}
+.action-buttons p {
+  text-align: center;
 
-.action-buttons {
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: auto;
-}
-
-.action-buttons p:first-child {
-  margin-right: 15px; /* Increase the right margin for the edit button */
-  margin-bottom: 5px; /* Adjust spacing between rows */
-}
-
-.action-buttons p:last-child {
-  margin-right: 10px;
-  margin-bottom: 5px; /* Adjust spacing between rows */
 }
 
 
-.card-booking h2 {
-  font-size: 15px;
+.total-price {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.workspace-name {
+  text-align: center;
+  font-size: 20px;
   font-weight: bold;
-  margin: 0;
+  margin: 10px;
 }
 
-.card-booking p {
-  font-size: 14px;
-  line-height: 1.4;
-  opacity: .7;
-  margin: 8px 0;
+.date-info {
+  text-align: center;
+  margin-bottom: 10px;
 }
+
+.see-more {
+  margin: 20px;
+  text-align: center;
+}
+
+// .card-booking p {
+//   font-size: 14px;
+//   line-height: 1.4;
+//   opacity: .7;
+//   margin: 8px 0;
+// }
