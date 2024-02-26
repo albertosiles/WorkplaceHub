@@ -36,9 +36,13 @@
   flex-grow: 1; /* Allow the content to grow to fill available space */
 }
 
-.action-buttons p {
+.action-buttons  {
   text-align: center;
+}
 
+.action-buttons a {
+  display: inline-block;
+  margin-right: 10px; /* Adjust as needed */
 }
 
 
@@ -53,6 +57,11 @@
   font-size: 20px;
   font-weight: bold;
   margin: 10px;
+}
+
+.location-info {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .date-info {
