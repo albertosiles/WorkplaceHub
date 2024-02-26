@@ -29,9 +29,36 @@
 }
 
 .card-booking-infos {
-  flex: 1;
-  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
 }
+
+.info-column {
+  flex: 1 1 45%; /* Adjust width as needed */
+  padding: 0 10px; /* Adjust spacing as needed */
+  margin-bottom: 10px;  /* Adjust spacing as needed */
+}
+
+.action-buttons {
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-right: 180px; /* Adjust spacing as needed */
+}
+
+.action-buttons p:first-child {
+  margin-right: 15px; /* Increase the right margin for the edit button */
+  margin-bottom: 5px; /* Adjust spacing between rows */
+}
+
+.action-buttons p:last-child {
+  margin-right: 10px;
+  margin-bottom: 5px; /* Adjust spacing between rows */
+}
+
 
 .card-booking h2 {
   font-size: 15px;

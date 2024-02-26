@@ -17,15 +17,23 @@
             <% total_days = (end_date - start_date).to_i + 1 %>
             <% total_price = total_days * price_per_day %>
 
-            <p><%= booking.start_date %></p>
-            <p><%= booking.end_date %></p>
-            <p>Price/day: €<%= price_per_day %></p>
-            <h2>Total Price: €<%= total_price %></h2>
+            <div class="info-column">
+              <p><%= booking.start_date %></p>
+              <p><%= booking.end_date %></p>
+            </div>
+            <div class="info-column">
+              <p>Price/day: €<%= price_per_day %></p>
+              <h2>Total Price: €<%= total_price %></h2>
+            </div>
 
-            <h2>Workspace: <%= link_to booking.workspace.name, workspace_path(booking.workspace), class: "btn btn-primary btn-sm" %></h2>
-            <br>
-            <p><%= link_to "Edit", edit_booking_path(booking) %>
-            <%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+            <div class="info-column">
+              <h2>Workspace: <%= link_to booking.workspace.name, workspace_path(booking.workspace), class: "btn btn-primary btn-sm" %></h2>
+            </div>
+
+            <div class="action-buttons">
+              <p><%= link_to "Edit", edit_booking_path(booking) %>
+              <%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+            </div>
           </div>
         </div>
       <% end %>
