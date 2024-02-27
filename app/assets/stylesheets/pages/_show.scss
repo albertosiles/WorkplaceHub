@@ -5,9 +5,20 @@
 .column {
   flex: 1;
   padding-inline: 10%;
+  padding-right: 5%;
 }
 
 .container-booking-form {
   display: flex;
   justify-content: center;
+}
+
+.btn {
+  background-color: #474F7A;
+  color: white;
+}
+
+.link {
+  color: #474F7A;
+  text-decoration: none;
 }
