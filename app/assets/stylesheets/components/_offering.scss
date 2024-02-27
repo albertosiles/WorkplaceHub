@@ -19,23 +19,32 @@
 
 .card-product-link {
   text-decoration: none;
-  color: black;
+  color: #474F7A;
 }
 
 .card-product-infos {
-  padding: 20px;
+  // padding: 20px;
+  flex-grow: 1;
 }
 
 .card-product h2 {
   margin: 0;
+  text-align: center;
 }
 
 .card-product p {
   margin: 5px 0;
+  text-align: center;
 }
 
 
 .action-buttons {
   display: flex;
-  justify-content: space-between;
+  gap: 15px;
+  padding-left: 70px;
+}
+
+.fa-solid {
+  color: #474F7A;
+
 }

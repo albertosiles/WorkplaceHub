@@ -1,7 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 <div class="container">
   <%# <div class="container-fluid"> %>
-    <h3><%= link_to "WorkplaceHub", workspaces_path, class: "nav-link" %></h3>
+    <%= link_to workspaces_path, class: "nav-link" do %>
+      <%= image_tag("WorkplaceHub_logo.png", alt: "WorkplaceHub Logo", class: "logo-img") %>
+    <% end %>
   <%# </div> %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

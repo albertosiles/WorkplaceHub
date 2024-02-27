@@ -18,8 +18,16 @@
                 <p><%= workspace.location %></p>
                 <p>€ <%= workspace.price %>/day</p>
                 <div class="action-buttons">
-                  <p><%= link_to "Edit", edit_workspace_path(workspace) %>
-                  <%= link_to "Delete", workspace_path(workspace), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+                  <div>
+                    <%= link_to edit_workspace_path(workspace) do %>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    <% end %>
+                  </div>
+                  <div>
+                    <%= link_to workspace_path(workspace), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                      <i class="fa-solid fa-trash"></i>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>
