@@ -7,9 +7,11 @@
   width: 25%;
   margin: 20px auto;
   border: 1px solid grey;
-  padding: 5px;
+  padding: 15px;
   border-radius: 5%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  max-width: 400px; /* Adjust as needed */
+
 }
 
 .container-center h2 {
@@ -21,4 +23,11 @@
 .container-center .li {
   color: #474F7A;
   text-decoration: none;
+}
+
+
+
+.form-inputs {
+/* Ensure form inputs stay within the container */
+max-width: 100%; /* Allow inputs to take up full width of the container */
 }
