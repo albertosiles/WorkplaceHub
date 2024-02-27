@@ -1,0 +1,14 @@
+.container-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the start (left) */
+  height: auto;
+  margin-left: 40%;
+  margin-right: 40%; /* Set height to auto */
+}
+
+.li {
+  color: #474F7A;
+  text-decoration: none;
+}
