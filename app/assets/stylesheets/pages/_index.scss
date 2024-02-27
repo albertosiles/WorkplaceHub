@@ -1,6 +1,19 @@
 // Import page-specific CSS files here.
 @import "home";
 
+h3 {
+  margin-bottom: 10px;
+  color: #474F7A;
+  font-size: 18px;
+}
+
+h5 {
+  margin-top: 0;
+  color: #474F7A;
+  font-style: italic;
+}
+
+
 .goshow {
     color: white;
     text-decoration: none;
