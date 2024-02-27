@@ -9,9 +9,16 @@
   border: 1px solid grey;
   padding: 5px;
   border-radius: 5%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.li {
+.container-center h2 {
+  /* Center the h2 text */
+  text-align: center;
+}
+
+/* Optional: Style the anchor elements within the container */
+.container-center .li {
   color: #474F7A;
   text-decoration: none;
 }
