@@ -27,18 +27,23 @@
             </div>
 
             <div class="date-info">
-              <p><%= booking.start_date %> - <%= booking.end_date %></p>
+              <p><%= booking.start_date %> — <%= booking.end_date %></p>
             </div>
 
-            <h2 class="total-price">Total Price: € <%= total_price %></h2>
+            <h2 class="total-price">€ <%= total_price %></h2>
 
             <div class="see-more">
-              <%= link_to "See More", workspace_path(booking.workspace), class: "btn btn-secondary btn-sm" %>
+              <%= link_to "See More", workspace_path(booking.workspace), class: "btn btn-sm" %>
             </div>
 
             <div class="action-buttons">
-              <p><%= link_to "Edit", edit_booking_path(booking) %></p>
-              <p><%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+              <%= link_to edit_booking_path(booking) do %>
+                <i class="fa-solid fa-pen-to-square"></i>
+              <% end %>
+
+              <p><%= link_to booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash"></i>
+              <% end %>
             </div>
           </div>
         </div>

@@ -1,39 +1,53 @@
     <div class="container content-container">
-        <%= link_to "Back to workspaces", workspaces_path %>
+        <%= link_to "Back to workspaces", workspaces_path, class: "link" %>
         <h1 class="mt-4 mb-3"><%= @workspace.name %></h1>
         <div class="card-category"
             style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
         </div>
-        <div class="mt-4 mb-4">
-            <p><strong>Location:</strong> <%= @workspace.location %></p>
-            <p><strong>Price per day:</strong> €<%= @workspace.price %></p>
-            <%= @workspace.description %>
+        <div class="container-2">
+            <div class="column">
+                <div class="mt-4 mb-4">
+                    <h5><i class="fa-solid fa-location-dot"></i> <%= @workspace.location %></h5>
+                    <h5> € <%= @workspace.price %>/day</h5>
+                </div>
+            </div>
+            <div class="column">
+                <div class="mt-4 mb-4">
+                  <p><%= @workspace.description %></p>
+                </div>
+            </div>
         </div>
-        <p>Reviews of former users:</p>
-        <ul class="list-unstyled">
-            <% @workspace.reviews.each do |review| %>
-            <li><i class="fa-solid fa-star"></i> <%= review.rating %>/5 - "<%= review.content %>"</li>
-            <% end %>
-        </ul>
-        <%= link_to "Add a review", new_workspace_review_path(@workspace), class: "btn btn-primary mb-0" %>
+        <br>
 
-        <!-- Check Availability button -->
+          <!-- Bookings section -->
+        <div class="container-booking-form">
+          <div class="column">
+            <%= simple_form_for [@workspace,@booking], html: { class: "center-form" } do |f| %>
+              <div class="form-group">
+                <%#= f.label :start_date %>
+                <%= f.input :start_date, as: :date, html5: true, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%#= f.label :end_date %>
+                <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>
+              </div>
+              <%= f.button :submit, class: "btn mt-4" %>
+            <% end %>
+          </div>
+          <div class= "column">
+            <h5>Reviews of former users:</h5>
+            <ul class="list-unstyled">
+                <% @workspace.reviews.each do |review| %>
+                <li><i class="fa-solid fa-star"> </i> <%= review.rating %>/5 - "<%= review.content %>"</li>
+                <% end %>
+            </ul>
+            <%= link_to "Add a review", new_workspace_review_path(@workspace), class: "btn mb-0" %>
+          </div>
+        </div>
+        <%# <!-- Check Availability button -->
         <div class="text-center">
             <a href="#" class="btn btn-success btn-lg">Check Availability</a>
-        </div>
+        </div> %>
         <!-- End Check Availability button -->
 
-        <!-- Bookings section -->
-        <%= simple_form_for [@workspace,@booking] do |f| %>
-          <div class="form-group">
-            <%= f.label :start_date %>
-            <%= f.input :start_date, as: :date, html5: true, class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :end_date %>
-            <%= f.input :end_date, as: :date, html5: true, class: "form-control" %>
-          </div>
-          <%= f.button :submit, class: "btn btn-primary mt-4" %>
-        <% end %>
         <!-- End of Bookings section -->
-    </div>
