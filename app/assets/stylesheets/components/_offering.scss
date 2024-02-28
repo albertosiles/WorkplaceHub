@@ -37,6 +37,15 @@
   text-align: center;
 }
 
+.btn-success {
+  border-radius: 5px;
+  border: none ;
+}
+
+.btn-success:hover {
+  background-color: #1F2544;
+  color: white;
+}
 
 .action-buttons {
   display: flex;
