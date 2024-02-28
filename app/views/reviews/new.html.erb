@@ -1,6 +1,12 @@
-<h1>How was your experience with this workspace?</h1>
-  <%= simple_form_for [@workspace, @review] do |f| %>
-  <%= f.input :rating %>
-  <%= f.input :content %>
-  <%= f.submit "Add review" %>
-<% end %>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h2>How was your experience with this workspace?</h2>
+      <%= simple_form_for [@workspace, @review] do |f| %>
+        <%= f.input :rating, required: false %><br>
+        <%= f.input :content %><br>
+        <%= f.submit "Add review" %>
+      <% end %>
+    </div>
+  </div>
+</div>
