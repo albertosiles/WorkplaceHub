@@ -16,6 +16,13 @@
 .btn {
   background-color: #474F7A;
   color: white;
+  border-radius: 5px;
+  border: none ;
+}
+
+.btn:hover {
+  background-color: #1F2544;
+  color: white;
 }
 
 .link {
