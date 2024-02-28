@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  border-radius:7px;
+  padding-top: auto;
+}
+
+.card {
+  width: 50%; /* Adjust the width as needed */
+  padding: 20px;
+  border: 2px solid grey; /* Border properties */
+}
+
+.card-body {
+  text-align: left; /* Align content inside card to the left */
+}
