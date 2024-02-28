@@ -1,8 +1,8 @@
 .container-center {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: flex-start; /* Align items to the start (left) */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; */
   height: auto;
   width: 25%;
   margin: 20px auto;
@@ -10,24 +10,57 @@
   padding: 15px;
   border-radius: 5%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  max-width: 400px; /* Adjust as needed */
-
+  max-width: 400px;
+  text-align: left;/* Adjust as needed */
 }
 
-.container-center h2 {
+// .container-center .login-form {
+//   /* Center the login form */
+//   text-align: center;
+// }
+
+.container-center .login-form  {
   /* Center the h2 text */
+  text-align: left;
+}
+
+.h2 {
   text-align: center;
 }
 
 /* Optional: Style the anchor elements within the container */
-.container-center .li {
-  color: #474F7A;
-  text-decoration: none;
+.container-center .form-links {
+  margin-top: 20px; /* Add margin to create space between the form and links */
+  text-align: left; /* Center the links */
 }
 
-
-
 .form-inputs {
-/* Ensure form inputs stay within the container */
-max-width: 100%; /* Allow inputs to take up full width of the container */
+  /* Ensure form inputs stay within the container */
+  max-width: 100%; /* Allow inputs to take up full width of the container */
+}
+
+.button {
+  /* Adjust button styling */
+  display: inline-block; /* Ensure the button behaves as an inline block element */
+  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: #474F7A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+
+}
+
+.form-links {
+  margin-top: 20px; /* Add margin to create space between the form fields and the links */
+  text-align: left; /* Center the links */
+}
+
+.form-links a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color */
+}
+
+.form-actions {
+  margin-top: 20px; /* Add margin to create space between the form and links */
+  text-align: left; /* Center the button */
 }
