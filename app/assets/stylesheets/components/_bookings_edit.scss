@@ -1,0 +1,45 @@
+// .container-center {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: auto;
+// }
+
+// .container-booking-edit {
+//   /* Adjust width and other styles as needed */
+//   width: 80%;
+// }
+
+// .form-group {
+//   width: 100%;
+//   text-align: center;
+// }
+
+
+// .btn {
+//   justify-content: center;
+//   width: auto;
+// }
+.container-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Ensure the container fills the viewport vertically */
+}
+
+.container-booking-edit {
+  width: 80%; /* Or any other width you desire */
+}
+
+.container-booking-edit h3 {
+  text-align: center; /* Center the h3 text */
+}
+
+.form-group {
+  text-align: center; /* Center the form elements */
+}
+
+.btn {
+  display: block; /* Make the button a block-level element */
+  margin: 0 auto; /* Center the button horizontally */
+}

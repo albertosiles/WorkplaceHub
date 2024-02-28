@@ -1,8 +1,14 @@
-<h1>Update the information on your workspace:</h1>
-<%= simple_form_for(@workspace) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :location %>
-  <%= f.submit "Update workspace", class: "btn btn-primary" %>
-<% end %>
+<div class="container-center">
+  <div class="container-workspace">
+  <h3>Update the information on your workspace:</h3>
+    <%= simple_form_for(@workspace) do |f| %>
+      <div class="form-content">
+        Name: <%= f.input :name, label: false %><br>
+        Description: <%= f.input :description, label: false %><br>
+        Price: <%= f.input :price, label: false %><br>
+        Location: <%= f.input :location, label: false %><br>
+        <%= f.submit "Update workspace", class: "btn btn-primary" %>
+        </div>
+    <% end %>
+  </div>
+</div>
