@@ -1,4 +1,4 @@
-.container {
+.container-review {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,12 +7,12 @@
   padding-top: auto;
 }
 
-.card {
+.card-review {
   width: 50%; /* Adjust the width as needed */
   padding: 20px;
   border: 2px solid grey; /* Border properties */
 }
 
-.card-body {
+.card-review-body {
   text-align: left; /* Align content inside card to the left */
 }
